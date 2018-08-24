@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import spring.boot.redis.util.DateUtil;
 
 @Component
-@EnableScheduling
+//@EnableScheduling
 public class ScheduleTasks {
 
 	@Scheduled(cron = "*/5 * * * * *")

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+	<h3>单文件上传</h3>
+	<form action="upload" method="POST" enctype="multipart/form-data">
+	    文件：<input type="file" name="file"/>
+	    <input type="submit"/>
+	</form>
+	
+	<hr/>
+	<h3>多文件上传</h3>
+	<form method="POST" enctype="multipart/form-data" action="batch">
+	    <p>文件1：<input type="file" name="file"/></p>
+	    <p>文件2：<input type="file" name="file"/></p>
+	    <p>文件3：<input type="file" name="file"/></p>
+	    <p>文件4：<input type="file" name="file"/></p>
+	    <p>文件5：<input type="file" name="file"/></p>
+	    <p><input type="submit" value="上传"/></p>
+	</form>
+	
+	<hr/>
+	<h3>文件列表</h3>
+	<tr th:each="fileObj,fileObjStat:${fileNameList}">
+		<input type="radio" name="fileName" />
+		<input th:id="'fileName' + ${fileObjStat.index}" th:value="${fileObj}" readonly="readonly" />
+		<br/>
+	</tr>
+	<br/>
+	<input type="button" id="download" value="下载文件" />
+
+</body>
+<script th:src="@{/js/jquery-3.3.1.js}"></script>
+<script th:inline="javascript">
+	$(document).ready(function(){
+		$("#download").click(function(){
+			var radios = $("input[name='fileName']");
+			var fileName = null;
+			/* <![CDATA[ */
+			for (var i=0; i < radios.length; i++) {
+				if (radios[i].checked) {
+					fileName = $("#fileName" + i).val();
+				}
+			}
+			 /* ]]> */
+			 
+			location.href='download?fileName=' + fileName;
+			/* $.ajax({
+				url:'/file/download',
+				async:false, 
+				type:'get', 
+				data:'fileName=' + fileName,
+				contextType:'multipart/form-data',
+				success:function(){
+				}
+			}); */
+		});
+	});
+</script>
+</html>
