@@ -30,5 +30,8 @@ public class Constant {
 	//public static final String THUMB_MEDIA_ID_URL = "https://api.weixin.qq.com/cgi-bin/media/upload?access_token=ACCESS_TOKEN&type=TYPE";
 	public static final String THUMB_MEDIA_ID_URL = "http://file.api.weixin.qq.com/cgi-bin/media/upload?access_token=ACCESS_TOKEN&type=TYPE";
 	
+	/**创建菜单**/
+	public static final String CREATE_MENU_URL = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN";
+	
 	
 }

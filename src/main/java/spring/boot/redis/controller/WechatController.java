@@ -205,4 +205,13 @@ public class WechatController {
 		}
 		return thumbMediaId;
 	}
+	
+	/**
+	 * 创建菜单
+	 */
+	@RequestMapping(value = "/menu", method = RequestMethod.POST)
+	public String createMenu(@RequestBody Map<String, Object> map){
+		AccessToken accToken = tokenUtil.getAccessToken(appId, appSecret);
+		return wxUtil.createMenu(accToken.getAccessToken(), map);
+	}
 }

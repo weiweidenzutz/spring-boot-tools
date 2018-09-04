@@ -85,4 +85,14 @@ public class WechatUtil {
 				.postForObject(Constant.FOREVER_PIC_URL.replace(Constant.ACCESS_TOKEN, accessToken), articles);
 		return jsonObj.getString("media_id");
 	}
+
+	
+	public String createMenu(String accessToken, Map<String, Object> map) {
+		JSONObject jsonObj = httpUtil.postForObject(Constant.CREATE_MENU_URL.replace(Constant.ACCESS_TOKEN, accessToken), map);
+		System.out.println(jsonObj.get("errcode"));
+		System.out.println(jsonObj.get("errmsg"));
+		return (String) jsonObj.get("errmsg");
+	}
+	
+	
 }
