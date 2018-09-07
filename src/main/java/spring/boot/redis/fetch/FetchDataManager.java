@@ -31,6 +31,7 @@ public class FetchDataManager {
 	 * @param url
 	 *            需要爬的网站地址
 	 */
+	@SuppressWarnings("unchecked")
 	public void craw(String url) {
 		if (url == null || "".equals(url)) {
 			return;
