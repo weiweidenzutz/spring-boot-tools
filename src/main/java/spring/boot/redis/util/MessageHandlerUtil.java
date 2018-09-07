@@ -24,7 +24,7 @@ import spring.boot.redis.entity.NewsItem;
 import spring.boot.redis.entity.Video;
 
 /**
- * 消息处理工具类
+ * 微信消息处理工具类
  * @author zhengjiaxing
  * @date 2018年8月27日
  */
