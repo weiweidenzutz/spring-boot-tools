@@ -18,10 +18,10 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 import spring.boot.redis.common.Constant;
-import spring.boot.redis.entity.MessageType;
 import spring.boot.redis.entity.Music;
 import spring.boot.redis.entity.NewsItem;
 import spring.boot.redis.entity.Video;
+import spring.boot.redis.enums.MessageType;
 
 /**
  * 微信消息处理工具类

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import spring.boot.redis.entity.ErrorInfo;
+import spring.boot.redis.exception.MyException;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
